@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+body {
+  background: url("../images/background.jpg");
+  font-family: "UD Digi Kyokasho N-R", "游明朝", "Yu Mincho", serif;
+}
+
+canvas {
+  -webkit-backface-visibility: hidden;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  max-height: 720px;
+}
+
+.border-top,
+.border-bottom {
+  border-color: #999999 !important;
+}
+
+#book {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: 150%;
+  max-width: 1920px;
+  margin: auto;
+}
+
+/*
+#book {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  touch-action: none;
+}
+*/
+#book-image,
+#page-image,
+#flip-image,
+#hit-area {
+  position: absolute;
+}
+
+#hit-area {
+  touch-action: none;
+}
+
+#book-prev,
+#book-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 120;
+  width: 4rem;
+  height: 2rem;
+  margin: auto;
+  border: 0;
+  background-color: transparent;
+  color: hsl(0, 0%, 30%);
+  text-align: center;
+  outline: 0;
+}
+
+#book-prev:hover,
+#book-next:hover {
+  color: hsl(0, 85%, 85%);
+}
+
+#book-prev {
+  left: 40%;
+}
+
+#book-next {
+  right: 0;
+}
+
+#pages section {
+  position: absolute;
+  overflow: hidden;
+}
+
+/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+#preloader.show {
+  opacity: 1;
+}
+
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 48px;
+  height: 48px;
+  margin: auto;
+}
+
+#spinner > span {
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  width: 4px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+#spinner > span:nth-child(1) {
+  background-color: rgba(51, 51, 51, 0.0714286);
+  -webkit-transform: rotate(0deg) translate(0, 16px);
+          transform: rotate(0deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(2) {
+  background-color: rgba(51, 51, 51, 0.142857);
+  -webkit-transform: rotate(30deg) translate(0, 16px);
+          transform: rotate(30deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(3) {
+  background-color: rgba(51, 51, 51, 0.214286);
+  -webkit-transform: rotate(60deg) translate(0, 16px);
+          transform: rotate(60deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(4) {
+  background-color: rgba(51, 51, 51, 0.285714);
+  -webkit-transform: rotate(90deg) translate(0, 16px);
+          transform: rotate(90deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(5) {
+  background-color: rgba(51, 51, 51, 0.357143);
+  -webkit-transform: rotate(120deg) translate(0, 16px);
+          transform: rotate(120deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(6) {
+  background-color: rgba(51, 51, 51, 0.428571);
+  -webkit-transform: rotate(150deg) translate(0, 16px);
+          transform: rotate(150deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(7) {
+  background-color: rgba(51, 51, 51, 0.5);
+  -webkit-transform: rotate(180deg) translate(0, 16px);
+          transform: rotate(180deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(8) {
+  background-color: rgba(51, 51, 51, 0.571429);
+  -webkit-transform: rotate(210deg) translate(0, 16px);
+          transform: rotate(210deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(9) {
+  background-color: rgba(51, 51, 51, 0.642857);
+  -webkit-transform: rotate(240deg) translate(0, 16px);
+          transform: rotate(240deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(10) {
+  background-color: rgba(51, 51, 51, 0.714286);
+  -webkit-transform: rotate(270deg) translate(0, 16px);
+          transform: rotate(270deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(11) {
+  background-color: rgba(51, 51, 51, 0.785714);
+  -webkit-transform: rotate(300deg) translate(0, 16px);
+          transform: rotate(300deg) translate(0, 16px);
+}
+
+#spinner > span:nth-child(12) {
+  background-color: rgba(51, 51, 51, 0.857143);
+  -webkit-transform: rotate(330deg) translate(0, 16px);
+          transform: rotate(330deg) translate(0, 16px);
+}
+
+/* No support */
+
+.no-support {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: #eeeeee;
+  color: #333333;
+  text-align: center;
+}
